@@ -1,0 +1,836 @@
+* {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  background-color: #f4f4f4;
+  &.dashboard-compact {
+    overflow-y: hidden;
+
+    &::after {
+      content: '';
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+  }
+
+  @include breakpoint("desktop-small", min) {
+    &.dashboard-compact {
+      overflow-y: scroll;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+}
+
+h2 {
+  font-size: 26px;
+
+  @include breakpoint("desktop", min) {
+    font-size: 28px;
+  }
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 30px;
+  }
+
+  @include breakpoint("desktop-xxl", min) {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 23px;
+
+  @include breakpoint("desktop", min) {
+    font-size: 25px;
+  }
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 27px;
+  }
+
+  @include breakpoint("desktop-xxl", min) {
+    font-size: 29px;
+  }
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+
+
+  @include breakpoint("desktop", min) {
+    font-size: 18px;
+  }
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 24px;
+  }
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+
+  @include breakpoint("desktop", min) {
+    font-size: 16px;
+  }
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 20px;
+  }
+
+  @include breakpoint("desktop-xxl", min) {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  font-size: 13px;
+  // color: $lighter-primary;
+  font-weight: $font-weight-semibold;
+  margin: 0;
+
+  @include breakpoint("desktop", min) {
+    font-size: 14px;
+  }
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 15px;
+  }
+}
+
+a {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p {
+  font-size: 12px;
+  color: $base-color;
+
+  @include breakpoint("desktop", min) {
+    font-size: 14px;
+  }
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 16px;
+  }
+}
+
+small {
+  font-size: 11px;
+  color: $small-color;
+
+  @include breakpoint("desktop-wide", min) {
+    font-size: 60%;
+  }
+}
+
+label {
+  // font-size: 12px;
+  font-weight: $font-weight-semibold;
+  // margin-right:10px;
+  // display: block;
+  //amir changes
+  font-size: 12px;
+  // font-style: oblique;
+
+  font-weight: 500;
+  // amir end
+
+
+  @include breakpoint ("desktop", min) {
+    font-size: 12px;
+  }
+
+  @include breakpoint ("desktop-wide", min) {
+    font-size: 15px;
+  }
+}
+
+// pre{
+//   // text-indent:0px
+//   // color: $black;
+//   // white-space: pre;
+// }
+
+
+// --------------main-sections-------------
+
+section {
+  position: relative;
+}
+
+
+.main-container {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+// .dashboard-app {
+//   margin-top: -35px;
+
+
+//   &:after {
+//     content: '';
+//     background-image: url(../../../assets/images/dashboard-bg-icon.png);
+//     width: 100%;
+//     height: 100%;
+//     right: 0px;
+//     bottom: 0px;
+//     position: absolute;
+//     z-index: -1;
+//     max-width: 500px;
+//   }
+
+//   @include breakpoint('tablet', min) {
+//     margin-top: -55px;
+
+//   }
+
+//   @include breakpoint('desktop', min) {
+//     margin-top: -75px;
+//   }
+// }
+
+// amir cha
+
+.dashboard-app {
+  // margin-top: -35px;
+
+  &:after {
+    content: '';
+    // background-image: url(../../../assets/images/dashboard-bg-icon.png);
+    width: 80vw;
+    margin-left:350px;
+    height: 100%;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    z-index: -1;
+    max-width: 500px;
+  }
+
+  @include breakpoint('tablet', min) {
+    // margin-top: -55px;
+
+  }
+
+  @include breakpoint('desktop', min) {
+    // margin-top: -75px;
+  }
+}
+
+// -----------specing-----------------
+
+.py-80 {
+  padding: 40px 0px;
+
+  @include breakpoint('desktop', min) {
+    padding: 80px 0px;
+  }
+}
+
+
+.py-100 {
+  padding: 50px 0px;
+
+  @include breakpoint('desktop', min) {
+    padding: 100px 0px;
+  }
+}
+
+.py-40 {
+  padding: 20px 0px;
+
+  @include breakpoint('desktop', min) {
+    padding: 40px 0px;
+  }
+}
+
+// ----------------text-color------------
+
+.text-black {
+  color: $black;
+}
+
+.text-primary {
+  color: $primary-color !important;
+}
+
+.text-danger {
+  color: $danger !important;
+}
+
+.text-secendary {
+  color: $secendary-color !important;
+
+}
+
+.text-tertiary {
+  color: $btn-grad-secondary;
+}
+
+
+// ----------------background-color--------------
+
+
+.bg-secendary {
+  background-color: $secendary-color !important;
+}
+
+.bg-off-white {
+  background-color: $input-border;
+}
+
+.bg-light-blue {
+  background-color: $table-head-blue;
+}
+
+.bg-gray {
+  background-color: $gray-color;
+}
+
+// ----------------overlay------------------
+
+.overlay {
+  background-color: rgba($black, 0.7);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.brand-logo img {
+  height: 50px;
+ 
+  @include breakpoint('desktop-small', min) {
+    margin-top: 60px;
+  }
+}
+
+
+.asterisk {
+  color: red;
+}
+
+.card {
+  // border-radius: 15px;
+  border: 1px solid #E3E3E3;
+  // width: 84%;
+
+  //amir changess
+
+
+  .card-max-height{
+    @include breakpoint('tablet', min) {
+      height: 80vh !important;
+      // max-height: 80vh !important;
+    }
+
+  }
+.card-body{
+
+
+
+  nav + .vertical-scrollable{
+    padding: 45px 16px;
+    // background-color: #1b05056b;
+    @include breakpoint('tablet', max) {
+      padding: 47px 11px;
+    }
+
+  }
+  //  padding: 47px 11px;
+  // tablet
+  .vertical-scrollable {
+
+
+
+    border-radius:10px;
+    // margin-top: 5px;
+
+    background: #edf2f4;
+
+    // padding: 20px;
+    // padding: 40px;
+
+    .tr-key{
+      font-weight: bold;
+    }
+    @include breakpoint('tablet', min) {
+      // min-height: 77vh;
+      height: 77vh;
+      .tr-key{
+         width:50% !important;
+        //  text-align: right !important;
+         font-weight: bold;
+
+       }
+
+        .tr-value{
+         width:50% !important;
+         text-align: left !important;
+        //  color:white;
+       }
+    }
+
+    // @include breakpoint('desktop-wide', min) {
+    //   max-height: 190px;
+    // }
+
+    // @include breakpoint('desktop-xxl', min) {
+    //   max-height: 190px;
+    // }
+
+
+
+  }
+
+
+}
+
+.json-formatter-row .json-formatter-string, .json-formatter-row .json-formatter-stringifiable {
+  white-space: break-spaces !important;
+}
+  //
+
+
+  margin: auto;
+  // overflow: hidden;
+  // .card-body {
+  //   border-bottom-left-radius: 15px;
+  //   border-bottom-right-radius: 15px;
+  //   box-shadow: 0px 5px 5px 5px #e3e3e3;
+  // }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 65px;
+    @include breakpoint("desktop", max) {
+       h4{
+        font-size: 16px !important;
+
+       }
+    }
+    h6{
+      // font-weight: 700;
+      font-size: 20px;
+      // font-family: 'icomoon';
+      margin: auto;
+    }
+  }
+}
+
+
+
+
+
+.alert-error {
+  strong {
+    color: $danger;
+  }
+}
+
+
+
+.download-file {
+  border-radius: 24px;
+  display: block;
+  font-size: 16px;
+  padding: 7px 18px;
+  background: $primary-color;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: $white;
+  text-decoration: none;
+  transition: .5s;
+
+  :hover {
+    background: $primary-gredient;
+    color: $white;
+  }
+}
+
+// original
+// .currentbal-main {
+//   background: url(../../../assets/images/balance-card-background.png)top center no-repeat;
+//   padding: 11px;
+//   text-align: center !important;
+
+
+//   background-size: 104%;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   min-height: 85px !important;
+//   box-shadow: 0px 3px 20px rgb(72 72 72 / 40%);
+
+//   background-color: #1B1B1B;
+//   h2{
+//     font-size: 28px !important;
+//   }
+//   @include breakpoint('tablet', min) {
+//     min-height: 175px;
+//   }
+
+//   @include breakpoint('desktop-wide', min) {
+
+//     max-height: 106px !important;
+//   }
+
+//   @include breakpoint('desktop-xxl', min) {
+
+//     max-height: 106px !important;
+//   }
+
+//   h2 {
+//     color: $white;
+//     font-size: 25px;
+//     font-weight: 600;
+
+//     @include breakpoint('tablet', min) {
+//       font-size: 30px;
+//     }
+
+//     @include breakpoint('desktop-wide', min) {
+//       font-size: 35px;
+//     }
+
+//     @include breakpoint('desktop-xxl', min) {
+//       font-size: 40px;
+//     }
+//   }
+
+//   .btn {
+//     background: $white;
+//     box-shadow: 0px 3px 20px #C9060633;
+//     border: 1px solid #CC0606;
+//     border-radius: 14px;
+//     width: 140px;
+
+//     @include breakpoint('teblet', min) {
+//       width: 172px;
+//     }
+//   }
+// }
+
+// amir chang
+.currentbal-main {
+  // background: url(../../../assets/images/balance-card-background.png)top center no-repeat;
+  padding: 11px;
+  text-align: center !important;
+
+
+  background-size: 104%;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 110px !important;
+  // box-shadow: 0px 3px 20px rgb(72 72 72 / 40%);
+
+  // background-color: #1B1B1B;
+  h2{
+    font-size: 28px !important;
+    color: black;
+  }
+  @include breakpoint('tablet', min) {
+    min-height: 175px;
+  }
+
+  @include breakpoint('desktop-wide', min) {
+
+    max-height: 106px !important;
+  }
+
+  @include breakpoint('desktop-xxl', min) {
+
+    max-height: 106px !important;
+  }
+
+  h2 {
+    // color: $white;
+    font-size: 25px;
+    font-weight: 600;
+
+    @include breakpoint('tablet', min) {
+      font-size: 30px;
+    }
+
+    @include breakpoint('desktop-wide', min) {
+      font-size: 35px;
+    }
+
+    @include breakpoint('desktop-xxl', min) {
+      font-size: 40px;
+    }
+  }
+
+  .btn {
+    background: $white;
+    box-shadow: 0px 3px 20px #C9060633;
+    border: 1px solid #CC0606;
+    border-radius: 14px;
+    width: 140px;
+
+    @include breakpoint('teblet', min) {
+      width: 172px;
+    }
+  }
+}
+// amir
+.total-balance {
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+
+  strong {
+    font-size: 20px;
+  }
+}
+
+.x-ball-spin {
+  color: $primary-color !important;
+}
+
+
+.print-verify {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 100%;
+  width: 100%;
+
+  img {
+    width: 100px;
+  }
+}
+
+
+.ratio {
+  h2 {
+    font-size: 32px;
+  }
+
+  span {
+    color: $black;
+    font-size: 14px;
+    font-weight: $font-weight-semibold;
+
+    @include breakpoint ('desktop-wide', min) {
+      font-size: 16px;
+    }
+  }
+}
+
+
+
+.no1 {
+  width: 190px;
+  padding: 10px 20px;
+  margin: auto;
+  background: linear-gradient(180deg, $primary-color, $secendary-color);
+  color: $white;
+  font-weight: 500;
+
+  font-size: 14px;
+  margin-top: 22px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+
+.list-items-main {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 7px;
+  flex-wrap: wrap;
+
+  ul {
+    background: #e4e3e8;
+    border: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-weight: 700;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 20px;
+    margin: 0;
+    list-style: none;
+    padding: 10px 20px;
+  }
+}
+
+#line1 {
+  font-size: 0;
+  width: 1px;
+  height: 20px;
+  color: $white;
+  background-color: #000;
+  margin: auto;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -3px;
+    width: 0px;
+    height: 0px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    transform: rotate(90deg);
+    border-left: 7px solid #170c32;
+  }
+}
+
+.apis {
+  background: $white;
+  box-shadow: 0px 3px 8px #00000029;
+  border-radius: 12px;
+
+
+  .b-list-img i{
+    font-size: 20px;
+    color: #fff;
+  }
+  .b-list-img {
+    background: transparent linear-gradient(177deg, var(--primary-color) 0%, var(--secendary-color) 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 8px #00000060;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .apis .title {
+    font-size: 17px;
+    color: #000;
+    font-weight: 600;
+    border-bottom: 2px solid #C61010;
+    line-height: 45px;
+  }
+
+  .api-list {
+    background: #fcf3f3;
+    box-shadow: 0px 3px 6px #0000004A;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    padding: 5px 1rem;
+    align-items: center;
+  }
+}
+
+.custom-nav {
+  .nav-item {
+    .img-div {
+      background: $white;
+      // box-shadow: 0px 10px 25px #181515ad;
+      box-shadow: 2px 2px 5px;
+      // width: 35px;
+      // height: 35px;
+      // border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 50px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+
+.flow-title {
+  border-bottom: 1px solid #d1d1d1;
+  padding-bottom: 0px;
+  padding: 15px 20px;
+  color: $black
+}
+
+.fa-copy {
+  background: #6e6868f0;
+  border-radius: 23px;
+  width: 30px;
+  height: 30px;
+  color: #dcdcf0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+
+@include breakpoint('phablet', max) {
+
+.d-reverse{
+  flex-direction: column-reverse;
+}
+}
+
+
+.profile-item ul {
+  list-style-type: none;
+  // margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: right;
+  margin-right: 8px;
+  li{
+    // float: right;
+    a {
+      // display: block;
+       color: black;
+      text-align: center;
+      padding: 8px;
+      text-decoration: none;
+      border-bottom: 3px solid $primary-color;
+      font-size: 10px;
+      margin-right: 3px;
+      font-weight: bold;
+      &.active{
+        background: $gredient-btn;
+        color: white;
+      }
+    }
+  }
+}
+
+.check-img {
+  height: 200px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}

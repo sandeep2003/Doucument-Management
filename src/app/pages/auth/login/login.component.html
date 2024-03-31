@@ -1,0 +1,87 @@
+<div class="sign-up-form d-block ml-auto">
+  <div class="form-logo-bg d-flex justify-content-center"><img
+      [src]="brandLogo ? brandLogo :localLogo"></div>
+  <div class="p-3 p-md-4 d-flex justify-content-center flex-column">
+    <h2>Welcome To <br> <span>Document Management</span></h2>
+    <form class="form-content mt-2 mt-md-4" [formGroup]="LoginForm" (ngSubmit)="loginUser()">
+      <ng-container *ngIf="!withMobile">
+        <div class="form-group">
+          <label class="pl-3">User ID</label>
+          <div class="position-relative">
+            <input type="text" class="form-control" placeholder="Enter email or mobile"
+              formControlName="email">
+            <span class="input-group-append">
+              <img src="assets/images/user-icon.png">
+            </span>
+          </div>
+          <div *ngIf="f['email'].touched && f['email'].invalid" class="alert-error">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']"><small><strong> required.</strong></small></div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="pl-3">Password</label>
+          <div class="position-relative">
+            <input [type]="showPasswordOnPress ? 'text' : 'password'" class="form-control" formControlName="password" name="password"
+              placeholder="Enter your password" autocomplete="new-password">
+            <span class="input-group-append">
+              <img src="assets/images/eye-icon.png"  (mousedown)="showPasswordOnPress = !showPasswordOnPress"
+                  (mouseup)="showPasswordOnPress = !showPasswordOnPress" >
+            </span>
+          </div>
+          <div *ngIf="f['password'].touched && f['password'].invalid" class="alert-error">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']"><small><strong>Password is required.</strong></small>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="withMobile">
+        <div class="form-group">
+          <label class="pl-3">Mobile</label>
+          <div class="position-relative">
+            <input type="text" class="form-control" placeholder="Enter mobile"
+              formControlName="mobile">
+            <span class="input-group-append">
+              <img src="assets/images/user-icon.png">
+            </span>
+          </div>
+          <div *ngIf="f['mobile'].touched && f['mobile'].invalid" class="alert-error">
+            <div *ngIf="f['mobile'].errors && f['mobile'].errors['required']"><small><strong> required.</strong></small></div>
+          </div>
+        </div>
+      </ng-container>
+
+
+
+      <div class="form-group mt-3 text-right">
+        <label class="forget"><a (click)="withMobile = !withMobile">Login with username/password</a></label>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary w-100" [disabled]="!LoginForm.valid">Sign in</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<ri-custom-mdl [id]="mdlId">
+  <div class="container" style="background-color: azure;border-radius: 25px;">
+    <div class="p-5 d-flex justify-content-center flex-column">
+      <h2>Welcome To Document Management</h2>
+      <form class="form-content mt-2 mt-md-4">
+        <div class="form-group text-center">
+          <div class="title my-4">
+            <h5>OTP</h5>
+            <p>Please type the verification code sent to you.</p>
+          </div>
+          <ng-otp-input  (onInputChange)="onOtpVerify($event)"  [config]="{length:length}"></ng-otp-input>
+
+        </div>
+        <div class="d-flex justify-content-center">
+          <button type="submit" #otpBack class="btn btn-primary back-btn w-100" (click)="otp_modal_service.close(mdlId)">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</ri-custom-mdl>

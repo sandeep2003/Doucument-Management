@@ -1,0 +1,128 @@
+.upgrade {
+  height: 140px;
+  background-image: url(../../../assets/images/ticket-img.png);
+  border: 1px solid #a89e9e00;
+  border-radius: 10px;
+
+  h5 {
+    padding: 20px 0px 0px 37px;
+  }
+
+  button {
+    margin: 12px 0px 0px 33px;
+    padding: 7px;
+    width: 159px;
+    border-radius: 10px;
+    border: none;
+    background-color: #92a3d6;
+    color: white;
+  }
+}
+
+.user-search{
+  position: absolute;
+  right: 78px;
+}
+.battary{
+  position: absolute;
+  right: 178px;
+}
+
+
+
+.user-icon {
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #d1d1ca5e;
+  color: #5072ac;
+
+}
+
+.fa-sign-out {
+  font-size: 30px;
+  margin: 20px;
+}
+
+
+
+.required-details {
+  background-color: #7a0410;
+  height: 60px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.kyc-img {
+  width: 240px;
+  margin-top: 15px;
+
+}
+
+.leter-text a {
+  color: rgb(70, 74, 64);
+  text-decoration: underline;
+}
+
+.click-new {
+  width: 200px;
+}
+
+.kyc-process {
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.mt-lg-3,
+.my-lg-3 {
+  margin-top: 7px !important;
+  margin-right: 25px;
+}
+
+ri-custom-mdl .ri-custom-mdl {
+  // top: -50vh !important;
+  bottom: auto ;
+}
+.input-container{
+  margin-left: 0px !important;
+}
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+// .menu-icon {
+//   padding: 0;
+//   width: 40px;
+//   height: 40px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   margin: 0px 7px;
+//   border: 1px solid #ddd;
+//   border-radius: 50%;
+// }
+
+.text-truncates {
+  height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  width: 100%;
+  white-space: break-spaces;
+}
+.dropdown-menu.show {
+  display: block;
+  position: absolute!important;
+  transform: none !important;
+  top: 3em !important;
+  right: 0em!important;
+  left: auto!important;
+  z-index: 999!important;
+  background: #fff!important;
+  box-shadow: rgb(221, 221, 221) 5px 1px 28px 11px;
+}

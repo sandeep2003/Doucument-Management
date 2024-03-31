@@ -1,0 +1,54 @@
+table {
+  font-size: 13px;
+  overflow-x: auto;
+  thead {
+    th {
+      color: $white;
+      background: linear-gradient(180deg, $primary-color 0%, $secendary-color 100%);
+
+      .bs-datepicker-body & {
+        background: transparent;
+
+      }
+    }
+  }
+
+  td {
+    text-align: left;
+    vertical-align: middle;
+    min-width: 200px;
+
+    .bs-datepicker-body & {
+      min-width: auto;
+    }
+
+    &:nth-of-type(1) {
+      color: #222222;
+      text-transform: capitalize;
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+}
+
+
+/* ------------------------TABLE SECTION START-------------------------------- */
+
+.customTblBox {
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    margin-bottom: 10px;
+    min-width: 927px;
+
+    tr {
+      th {
+        white-space: nowrap;
+        text-transform: uppercase;
+        background: linear-gradient(180deg, $primary-color 0%, $secendary-color 100%);
+        color: $white;
+      }
+    }
+  }
+}

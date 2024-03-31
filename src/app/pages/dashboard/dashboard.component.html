@@ -1,0 +1,272 @@
+
+
+
+<!-- Dashboard begins  -->
+<div class="dashboard-design">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0 text-left">File Search</h2>
+          <button class="btn btn-primary btn-sm text-right" (click)="_RiCustomMdlService.open(this.mdlId)">
+            Upload New File
+          </button>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group  input-field">
+                  <label for="upload_doc">Date Range </label>
+                  <label class="input">
+                    <input type="text" placeholder="Select Date" class="input__field " bsDaterangepicker [maxDate]="maxDate" formControlName="selectdate" [bsConfig]="bsCustConfg" #rangePicker="bsDaterangepicker" (onShown)="onDateRangePickerShow()">
+                  </label>
+                  <div *ngIf="(getControl['selectdate'].touched ) && getControl['selectdate'].invalid" class="alert-error">
+                    <div *ngIf="getControl['selectdate'].errors && getControl['selectdate'].errors['required']">
+                      <small><strong>required.</strong></small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group  input-field">
+                  <label for="upload_doc">Select Catogories 1 </label>
+
+                  <label class="input">
+                    <select class="form-control" formControlName="catagory1" (change)="selectEvent($event)">
+                      <option value="" disabled  selected>Select Catogories</option>
+                      <option value="personal" >Personal</option>
+                      <option value="professional" >Professional</option>
+                    </select>
+
+                  </label>
+                  <div *ngIf="(getControl['catagory1'].touched ) && getControl['catagory1'].invalid" class="alert-error">
+                    <div *ngIf="getControl['catagory1'].errors && getControl['catagory1'].errors['required']">
+                      <small><strong>required.</strong></small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group  input-field">
+                  <label for="upload_doc">Select Catogories 2 </label>
+                  <label class="input">
+                    <select class="form-control" formControlName="catagory2" >
+                      <option value="" disabled  selected>Select Catogories 2</option>
+                      <option *ngFor="let item of cat2" [value]="item.name">{{item.name}}</option>
+                    </select>
+                  </label>
+                  <div *ngIf="(getControl['catagory2'].touched ) && getControl['catagory2'].invalid" class="alert-error">
+                    <div *ngIf="getControl['catagory2'].errors && getControl['catagory2'].errors['required']">
+                      <small><strong>required.</strong></small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group input-field">
+                  <label for="upload_doc">Uploaded By </label>
+                  <input type="text" placeholder="uploaded by" autocomplete="off" id="inputdsz1" class="form-control" formControlName="upload_by">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group input-field">
+                  <label for="upload_doc">Search By </label>
+                  <input type="text" placeholder="search by value" autocomplete="off" id="inpusdsdz1" class="form-control" formControlName="search_by">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-field">
+                  <label for="upload_doc">Tag</label>
+                  <label class="input">
+                    <div class="editor-tag" (click)="focusTagInput()">
+                      <span class="tag-item" *ngFor="let tag of tags">
+                        {{ tag.label }}
+                        <span class="remove-tag" (click)="removeTag(tag)">×</span>
+                      </span>
+                      <input
+                        placeholder="Enter tag"
+                        #tagInput
+                        type="text"
+                        class="input-tag"
+                        (keyup)="onKeyUp($event)"
+                        formControlName="tag"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+              <div class="btn-submit ml-2   ">
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary"
+                  (click)="submitForm()">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="dashboard-design " style="background-color:#fff ;">
+  <div class="row mt-3">
+    <ng-container *ngIf="isData && Search_Data.length > 0">
+      <div class="col-lg-12" >
+        <table class="table table-responsive table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Document Id</th>
+              <th scope="col">Major Head</th>
+              <th scope="col"> Minor Head</th>
+              <th scope="col"> Document Date</th>
+              <th scope="col"> Document Remarks</th>
+              <th scope="col"> Upload Time</th>
+              <th scope="col"> Uploaded By</th>
+              <th scope="col"> Total Count</th>
+              <th scope="col"> File Url</th>
+              <th scope="col"> Download IMG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of Search_Data">
+              <th scope="row">{{item?.row_num}}</th>
+              <td>{{item?.document_id}}</td>
+              <td>{{item?.major_head}}</td>
+              <td>{{item?.minor_head}}</td>
+              <td>{{item?.document_date}}</td>
+              <td>{{item?.document_remarks}}</td>
+              <td>{{item?.upload_time}}</td>
+              <td>{{item?.uploaded_by}}</td>
+              <td>{{item?.total_count}}</td>
+              <td><a [href]="item?.file_url" class="btn btn-primary">view</a> </td>
+              <td><button (click)="download(item?.file_url)"  class="btn btn-primary">Download</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isData && Search_Data.length <= 0">
+      <div class="col-lg-12 text-center">
+        <h4>No Data Found</h4>
+      </div>
+    </ng-container>
+
+  </div>
+</div>
+
+<ri-custom-mdl [id]="mdlId">
+  <div class="row">
+    <div class="col-sm-12 col-lg-12 col-md-10 mt-4">
+      <div class="card " style="box-shadow: none !important ; min-width: 65vw;">
+        <div class="card-header" style="display: block;padding: 15px;">
+          <div class="row">
+            <div class="col-md-11 pr-0">
+              <h3>File Upload</h3>
+            </div>
+            <div class="col-md-1 text-right p-0">
+              <button  class="btn btn-primary" (click)="_RiCustomMdlService.close(this.mdlId)" style="text-align: center;cursor: pointer;padding: 2px 6px 0px 5px;font-weight: 900;border-radius: 50%;width: 40px;height: 40px;font-size: 22px;font-weight: 100;"><i class="fa fa-times" style="font-weight: 100;"></i>
+            </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body" >
+          <form [formGroup]="fileulpoadform">
+            <div class="row">
+              <div class="col-lg-3 col-md-3">
+                <div class="form-group  input-field">
+                  <label for="upload_doc">Date</label>
+                  <label class="input">
+                    <input type="text"   #dp="bsDatepicker" bsDatepicker
+                    [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }" class="input__field" id="inputArea1"
+                    placeholder="DD-MM-YYYY" formControlName="date" (keydown.space)="$event.preventDefault();"
+                    autocomplete="off">
+                    <label class="input__label">Date</label>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group  input-field">
+                  <label for="upload_doc">Select Catogories 1</label>
+                  <label class="input">
+                    <select class="form-control" formControlName="catagory1" (change)="selectEvent($event)">
+                      <option value="" disabled  selected>Select Catogories 1</option>
+                      <option value="personal" >Personal</option>
+                      <option value="professional" >Professional</option>
+                    </select>
+
+                  </label>
+                  <div *ngIf="(getControluploadfile['catagory1'].touched ) && getControluploadfile['catagory1'].invalid" class="alert-error">
+                    <div *ngIf="getControluploadfile['catagory1'].errors && getControluploadfile['catagory1'].errors['required']">
+                      <small><strong>required.</strong></small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group  input-field">
+                  <label for="upload_doc">Select Catogories 2 </label>
+                  <label class="input">
+                    <select class="form-control" formControlName="catagory2" >
+                      <option value="" disabled  selected>Select Catogories 2</option>
+                      <option *ngFor="let item of cat2" [value]="item.name">{{item.name}}</option>
+                    </select>
+
+                  </label>
+                  <div *ngIf="(getControluploadfile['catagory2'].touched ) && getControluploadfile['catagory2'].invalid" class="alert-error">
+                    <div *ngIf="getControluploadfile['catagory2'].errors && getControluploadfile['catagory2'].errors['required']">
+                      <small><strong>required.</strong></small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                    <label for="upload_doc">Upload Document: </label>
+                    <div class="upload">
+                      <input type="button" class="uploadButton" value="Browse" />
+                      <input type="file" name="upload" accept=".pdf , .jpg" id="inputArea1"
+                        formControlName="image" (change)="onChange($event)" />
+                    </div>
+                    <div *ngIf="(getControluploadfile['image'].touched ) && getControluploadfile['image'].invalid" class="alert-error">
+                      <div *ngIf="getControluploadfile['image'].errors && getControluploadfile['image'].errors['required']">
+                        <small><strong>required.</strong></small></div>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-field">
+                  <label for="">Tags: </label>
+                  <label class="input">
+                    <div class="editor-tag" (click)="fileuploadfocusTagInput()">
+                      <span class="tag-item" *ngFor="let tag of tagsfileupload">
+                        {{ tag.label }}
+                        <span class="remove-tag" (click)="fileuploadremoveTag(tag)">×</span>
+                      </span>
+                      <input
+                        placeholder="Enter tag"
+                        #filetagInput
+                        type="text"
+                        class="input-tag"
+                        (keyup)="onKeyUpfileupload($event)"
+                        formControlName="tag"
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-field">
+                  <label for="upload_doc">Remarks: </label>
+                  <textarea type="text" rows="2" formControlName="remarks"placeholder="Remarks" class="form-control">
+                  </textarea>
+                </div>
+
+              </div>
+              <div class="col-md-12 text-center">
+                <button class="btn btn-primary" [disabled]="!fileulpoadform.valid" (click)="upload()">Upload</button>
+              </div>
+            </div>
+          </form>
+        </div>
+     </div>
+    </div>
+  </div>
+</ri-custom-mdl>

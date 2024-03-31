@@ -1,0 +1,64 @@
+<div class="w-full bg-red ">
+  <div class="container-fluid ">
+    <div class="dashboard-content ">
+      <div class="top-nav navbar-expand-sm d-flex justify-content-between align-items-center" style="margin-top: 10px;">
+        <div class="top-navleft  mb-lg-0">
+          <a class="menu-toggle text-white" (click)="menuadd()"><i class="fas fa-bars"></i></a>
+        </div>
+        <ul class="navbar-item flex-row  custom-nav align-items-center mb-0">
+          <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1 ">
+            <a href="javascript:void(0);" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+              class="nav-link dropdown-toggle user p-0">
+              <span class="d-flex mr-2"><span class="main-img-user d-flex align-items-center justify-content-center text-white img-div">
+                <img src="assets/images/profile-img.jpg">
+              </span>
+              </span>
+            </a>
+            <div aria-labelledby="userProfileDropdown" class="dropdown-menu  shadow-md border-0 animated fadeInUp">
+              <div class="user-profile-section">
+                <div class="media mx-auto">
+                  <div class="media-body">
+                    <h3 class="text-dark mb-3"><strong>User Profile</strong></h3>
+
+                        <hr>
+
+
+
+                    <div class="row p-3 align-items-center" >
+                      <div class="col-md-2 col-2 p-0 text-center" >
+                        <i class="fas fa-key user-icon rounded-lg" ></i>
+                      </div>
+                      <div class="col-md-9 col-10">
+                        <strong (click)="logout()"  style="cursor: pointer;" >
+                          Log Out</strong>
+                      </div>
+                    </div>
+
+                    <!-- <div class="row mt-3 align-items-center d-none d-sm-block" >
+                      <div class="col-12" >
+                        <div class="">
+                          <div class=" upgrade" >
+                            <h5 class="">Unlimited</h5>
+                            <h5 class="pt-0">Access</h5>
+                            <button class="">
+                              Upgrade
+                            </button>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div> -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

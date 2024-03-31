@@ -1,0 +1,247 @@
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="card">
+      <div class="card-header">
+        <h4>White Labeling Configuration</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="Form">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="subdommain"
+                  >Subdomain <span class="asterisk">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  [readonly]="userData.userdata.usertype == 3"
+                  id="subdommain"
+                  formControlName="sub_domain"
+                  placeholder="This name would be displayed as your identity"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="inputArea1"
+                  >Brand Name<span class="asterisk">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputArea1"
+                  placeholder="brand_name"
+                  formControlName="brand_name"
+                  autocomplete="off"
+                />
+                <div
+                  *ngIf="
+                    (getControl['brand_name'].touched || submitted) &&
+                    getControl['brand_name'].invalid
+                  "
+                  class="alert-error"
+                >
+                  <div
+                    *ngIf="
+                      getControl['brand_name'].errors &&
+                      getControl['brand_name'].errors['required']
+                    "
+                  >
+                    <small><strong>Brand Name is required.</strong></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 position-relative">
+              <label for="inputArea1"
+                >Favicon<span class="asterisk">*</span></label
+              >
+
+              <div class="upload">
+                <input type="button" class="uploadButton" value="Browse" />
+                <input
+                  type="file"
+                  name="upload"
+                  value="fav_icon"
+                  id="inputArea"
+                  formControlName="fav_icon"
+                  accept="image"
+                  (change)="onChange($event, 'favicon')"
+                />
+                <span>
+                  <a
+                    [href]="faviconLinkdomain"
+                    *ngIf="faviconLinkdomain"
+                    target="_blank"
+                    class="logo-eye"
+                    for="inputArea"
+                  >
+                    <i class="fa fa-eye"></i>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+
+            <!-- <div class="col-sm-4" *ngIf="isLogo">
+           npm i @ckeditor/ckeditor5-angular;
+           npm i @ckeditor/ckeditor5-build-classic;
+            <img style="width:200px ;height:200px ;" src="{{showLogo}}">
+          </div> -->
+            <div class="col-sm-6 position-relative">
+              <div class="form-group">
+                <label for="inputArea"
+                  >Logo<span class="asterisk">*</span></label
+                >
+
+                <div class="upload">
+                  <input type="button" class="uploadButton" value="Browse" />
+                  <input
+                    type="file"
+                    name="upload"
+                    id="inputA"
+                    formControlName="logo"
+                    accept="image/*"
+                    (change)="onChange($event, 'logo')"
+                  />
+                  <span>
+                    <a
+                      [href]="logoLinkdomain"
+                      *ngIf="logoLinkdomain"
+                      target="_blank"
+                      class="logo-eye"
+                      for="inputA"
+                      ><i class="fa fa-eye"></i>
+                    </a>
+                  </span>
+                </div>
+
+                <div
+                  *ngIf="
+                    (getControl['logo'].touched || submitted) &&
+                    getControl['logo'].invalid
+                  "
+                  class="alert-error"
+                >
+                  <div
+                    *ngIf="
+                      getControl['logo'].errors &&
+                      getControl['logo'].errors['required']
+                    "
+                  >
+                    <small><strong>logo is required.</strong></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="subdommain"
+                >Theme Colors :- <span class="asterisk">*</span></label
+              >
+              <div class="row" formGroupName="colorGroup">
+                <div class="col-sm-6">
+                  <div
+                    class="form-group d-flex justify-content-between align-items-center"
+                  >
+                    <label for="inputArea1"><small>Gradient Change 1 :</small></label>
+                    <input
+                      type="color"
+                      formControlName="firstGrd"
+                      id="inputArea1"
+                    />
+
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div
+                    class="form-group d-flex justify-content-between align-items-center"
+                  >
+                    <label for="inputArea1"><small>Gradient Change 2 :</small></label>
+                    <input type="color" formControlName="secondGrd" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div
+                    class="form-group d-flex justify-content-between align-items-center"
+                  >
+                    <label for="inputArea1"><small>Button gradient 1 :</small></label>
+                    <input type="color" formControlName="buttonGrd" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div
+                    class="form-group d-flex justify-content-between align-items-center"
+                  >
+                    <label for="inputArea1"><small>Button gradient 2 :</small></label>
+                    <input type="color" formControlName="buttonGrdsecond" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div
+                    class="form-group d-flex justify-content-between align-items-center"
+                  >
+                    <label for="inputArea1"><small>Border color :</small></label>
+                    <input type="color" formControlName="borderColor" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="subdommain"
+                  >Login Text <span class="asterisk">*</span></label
+                >
+                <textarea name="login_text" class="form-control" id="" cols="30" rows="10" formControlName="login_text"></textarea>
+                <!-- <ckeditor
+                  [editor]="editor"
+                  formControlName="login_text"
+                ></ckeditor> -->
+                <!-- <input type="text" class="form-control" id="subdommain" formControlName="login_text" placeholder="login text" autocomplete="off"> -->
+              </div>
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-sm-7">
+              <div class="text-sm-right">
+                <button
+                type="submit"
+                name="time"
+                class="btn btn-primary "
+                (click)="submitForm()"
+                [disabled]="!Form.valid"
+              >
+                Submit
+              </button>
+              </div>
+            </div>
+            <div class="col-sm-5 text-right mt-2">
+              <!-- <button
+                type="submit"
+                name="time"
+                class="btn btn-primary"
+                (click)="setDefColor()"
+              >
+                Domain Default Color
+              </button> -->
+             <strong style="border-bottom: 2px solid;"> <a
+              (click)="resetColor()"
+            >
+              Portal Default Color
+            </a>
+            </strong>
+            </div>
+           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

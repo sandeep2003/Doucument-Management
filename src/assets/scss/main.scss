@@ -1,0 +1,27 @@
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+
+
+@import "vendor/icons.scss";
+// -----------base----------------
+
+@import "config/config";
+@import "base/base";
+@import "base/forms";
+@import "pages/pages";
+
+// -----------layout----------------
+
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/topbar";
+@import "layouts/sidebar-menu";
+@import "layouts/dashboard-layout";
+
+
+// ----------------sections----------------
+
+@import "sections/section";
+
+// --------------Components-------------
+
+@import "components/components";

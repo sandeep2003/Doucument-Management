@@ -1,0 +1,18 @@
+<div class="dashboard-nav ">
+  <div class="nav-logo p-3 p-lg-0 d-flex ">
+    <a class="brand-logo"><span><img [src]="brandLogo"></span></a>
+    <a class="menu-close text-white" (click)="menuremove()"><i class="far fa-times"></i></a>
+  </div>
+  <ng-container>
+    <nav #sidebar class="sidebar-nav  dashboard-nav scrollbar">
+      <ul class="accordion mt-2" id="child-wrap">
+        <li><a  routerLinkActive="active-link"> <i class="icon-dashboard h4 mb-0 text-dark mr-2" style="width: 50px;height:30px;font-size: 30px;"></i>Dashboard</a>
+        </li>
+      </ul>
+  </nav>
+  </ng-container>
+</div>
+
+
+
+

@@ -1,0 +1,55 @@
+:root {
+  --primary-color: #FF0000;
+  --secendary-color: #800000;
+  --btn-grad-secondary: #DE0000;
+  --border-color: #FF0000;
+  --btn-grad-primary: #FFDD34;
+  //  --btn_grad_primary:#FFDD34BD;
+}
+
+// ------------font-weight-------------
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-semibold: 600;
+$font-weight-bolder: 700;
+
+
+// -------------theme-color-----------
+$primary-color: var(--primary-color);
+$secendary-color: var(--secendary-color);
+$btn-grad-secondary: var(--btn-grad-secondary);
+$border-color: var(--border-color);
+$btn-grad-primary: var(--btn-grad-primary);
+// $btn-grad-primary: var(--btn-grad-primary);
+
+$white: #fff;
+$black: #000;
+$base-color: #979797;
+$danger: #F90032;
+$gray-color: #f1f1f1;
+$input-border: #C5C5C5;
+$small-color: #262626;
+$warning-color: #FF7A00;
+$table-color: #202020;
+$table-head-blue: #DFF5FF;
+$info-color: #EB0000;
+
+
+// -------------buttons-----------
+
+$gredient-btn: transparent linear-gradient(180deg, $btn-grad-primary 0%, $btn-grad-secondary 100%) 0% 0% no-repeat padding-box;
+$gredient-btn-hover: inear-gradient(white, white) padding-box, linear-gradient(to right, $btn-grad-primary, $btn-grad-secondary) border-box;
+
+
+
+// ---------------background-colors-------------
+
+$content-bg: #FBF9FA;
+$bg-off-white: #F0F0F8;
+$nav-color: #636363;
+
+// -------------gradients-----------
+
+$primary-gredient: transparent linear-gradient(180deg, $primary-color 0%, $secendary-color 100%) 0% 0% no-repeat padding-box;

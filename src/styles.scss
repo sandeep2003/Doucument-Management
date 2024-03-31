@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "../src/assets/scss/main";
+@import 'ngx-toastr/toastr';
+
+
+carousel .carousel-inner {
+  gap: 10px;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: none!important;
+}
+.dropdown-toggle::after{
+  content: none!important;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+.owl-carousel {
+  z-index: 0!important;
+}

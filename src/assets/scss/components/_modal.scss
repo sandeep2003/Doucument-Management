@@ -1,0 +1,70 @@
+
+.modal-content .btn-close {
+  margin-top: 22px;
+  position: absolute;
+  right: 8px;
+  background: linear-gradient(180deg, $primary-color, $secendary-color);
+  border: transparent;
+  opacity: 1;
+  color: $white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  top: -15px;
+  z-index: 1;
+}
+
+
+.ri-custom-mdl-CloseBtn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.ri-custom-mdl-CloseBtnFix {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 30px;
+  opacity: unset;
+}
+
+ri-custom-mdl .ri-custom-mdl {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1031;
+  overflow: auto;
+  display: flex;
+}
+
+ri-custom-mdl .ri-custom-mdl .ri-custom-mdl-body {
+
+  margin: auto;
+  min-width: 350px;
+
+  max-height: 100vh;
+
+  overflow: auto;
+  position: relative;
+  @include breakpoint ('desktop-small', min) {
+    min-width: 400px;
+    max-width: 67vw;
+    max-height: 90vh;
+  }
+}
+
+ri-custom-mdl .ri-custom-mdl-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.75;
+  z-index: 1030;
+}
+

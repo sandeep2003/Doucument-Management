@@ -1,0 +1,320 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?szc3d6');
+  src:  url('../fonts/icomoon.eot?szc3d6#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?szc3d6') format('truetype'),
+    url('../fonts/icomoon.woff?szc3d6') format('woff'),
+    url('../fonts/icomoon.svg?szc3d6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  // speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  font-size: 25px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-utilities:before {
+  content: "\e902";
+}
+.icon-credit-check:before {
+  content: "\e91a";
+}
+.icon-AI-API:before {
+  content: "\e925";
+}
+.icon-corporate-verify:before {
+  content: "\e933";
+}
+.icon-IIV:before {
+  content: "\e97b";
+}
+.icon-crimecheck:before {
+  content: "\e97c";
+}
+.icon-udhyaam-aadhaar:before {
+  content: "\e937";
+}
+.icon-tan:before {
+  content: "\e938";
+}
+.icon-stock:before {
+  content: "\e939";
+}
+.icon-issue-doc:before {
+  content: "\e93a";
+}
+.icon-create-support-user:before {
+  content: "\e93b";
+}
+.icon-manual-fund-debit:before {
+  content: "\e93c";
+}
+.icon-transfer:before {
+  content: "\e946";
+}
+.icon-user-fund-request:before {
+  content: "\e947";
+}
+.icon-complaint:before {
+  content: "\e948";
+}
+.icon-rto:before {
+  content: "\e949";
+}
+.icon-pincode:before {
+  content: "\e950";
+}
+.icon-passport:before {
+  content: "\e951";
+}
+.icon-liveness:before {
+  content: "\e952";
+}
+.icon-pan:before {
+  content: "\e953";
+}
+.icon-namematch:before {
+  content: "\e954";
+}
+.icon-mobile-verify:before {
+  content: "\e955";
+}
+.icon-MCC:before {
+  content: "\e956";
+}
+.icon-mca:before {
+  content: "\e957";
+}
+.icon-lei:before {
+  content: "\e958";
+}
+.icon-itr:before {
+  content: "\e959";
+}
+.icon-imei:before {
+  content: "\e95a";
+}
+.icon-ifsc-code:before {
+  content: "\e95b";
+}
+.icon-iec:before {
+  content: "\e95c";
+}
+.icon-gstin:before {
+  content: "\e95d";
+}
+.icon-gst:before {
+  content: "\e95e";
+}
+.icon-fuel:before {
+  content: "\e95f";
+}
+.icon-fasai:before {
+  content: "\e960";
+}
+.icon-fastag:before {
+  content: "\e961";
+}
+.icon-facematch:before {
+  content: "\e962";
+}
+.icon-epfo:before {
+  content: "\e963";
+}
+.icon-email:before {
+  content: "\e964";
+}
+.icon-dl:before {
+  content: "\e965";
+}
+.icon-doc-detect:before {
+  content: "\e966";
+}
+.icon-digilocker:before {
+  content: "\e967";
+}
+.icon-currency-ex:before {
+  content: "\e968";
+}
+.icon-crimecheck1:before {
+  content: "\e969";
+}
+.icon-court-case:before {
+  content: "\e96a";
+}
+.icon-ckyc:before {
+  content: "\e96b";
+}
+.icon-cin:before {
+  content: "\e96c";
+}
+.icon-cibil:before {
+  content: "\e96d";
+}
+.icon-cheque:before {
+  content: "\e96e";
+}
+.icon-chalan:before {
+  content: "\e96f";
+}
+.icon-card-validator:before {
+  content: "\e970";
+}
+.icon-bulk-email:before {
+  content: "\e971";
+}
+.icon-aadhaar:before {
+  content: "\e973";
+}
+.icon-26as-detail:before {
+  content: "\e974";
+}
+.icon-whatsapp:before {
+  content: "\e975";
+}
+.icon-vpn:before {
+  content: "\e976";
+}
+.icon-voter-id:before {
+  content: "\e977";
+}
+.icon-upi:before {
+  content: "\e978";
+}
+.icon-add-fund-admin:before {
+  content: "\e900";
+}
+.icon-bank-list:before {
+  content: "\e901";
+}
+.icon-funding:before {
+  content: "\e903";
+}
+.icon-delete-token:before {
+  content: "\e904";
+}
+.icon-pull-doc:before {
+  content: "\e905";
+}
+.icon-pull-parameter:before {
+  content: "\e906";
+}
+.icon-issuer-list:before {
+  content: "\e908";
+}
+.icon-upload-file:before {
+  content: "\e909";
+}
+.icon-e-aadhaar:before {
+  content: "\e90a";
+}
+.icon-doc-json:before {
+  content: "\e90b";
+}
+.icon-doc-pdf:before {
+  content: "\e90c";
+}
+.icon-issued-files:before {
+  content: "\e90d";
+}
+.icon-access-token:before {
+  content: "\e90e";
+}
+.icon-digi-locker:before {
+  content: "\e90f";
+}
+.icon-complaint-list:before {
+  content: "\e910";
+}
+.icon-raise-ticket:before {
+  content: "\e911";
+}
+.icon-support-user-list:before {
+  content: "\e913";
+}
+.icon-support-user:before {
+  content: "\e915";
+}
+.icon-statement:before {
+  content: "\e916";
+}
+.icon-add:before {
+  content: "\e918";
+}
+.icon-bank:before {
+  content: "\e919";
+}
+.icon-authorize-request:before {
+  content: "\e91b";
+}
+.icon-approve-request:before {
+  content: "\e91c";
+}
+.icon-all-request:before {
+  content: "\e91d";
+}
+.icon-fund-request:before {
+  content: "\e91e";
+}
+.icon-document-verification:before {
+  content: "\e91f";
+}
+.icon-document-ocr:before {
+  content: "\e920";
+}
+.icon-api-verification:before {
+  content: "\e921";
+}
+.icon-user-permission:before {
+  content: "\e922";
+}
+.icon-permission:before {
+  content: "\e923";
+}
+.icon-credentails:before {
+  content: "\e924";
+}
+.icon-balance-history:before {
+  content: "\e926";
+}
+.icon-ledger:before {
+  content: "\e927";
+}
+.icon-api-documents:before {
+  content: "\e928";
+}
+.icon-reports:before {
+  content: "\e929";
+}
+.icon-list-role:before {
+  content: "\e92a";
+}
+.icon-services-request-list:before {
+  content: "\e930";
+}
+.icon-services:before {
+  content: "\e931";
+}
+.icon-serveices-request-list-2:before {
+  content: "\e932";
+}
+.icon-add-user:before {
+  content: "\e934";
+}
+.icon-user:before {
+  content: "\e935";
+}
+.icon-dashboard:before {
+  content: "\e936";
+}
