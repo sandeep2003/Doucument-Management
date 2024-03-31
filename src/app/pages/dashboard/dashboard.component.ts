@@ -69,6 +69,8 @@ export class DashboardComponent implements OnInit {
   file: any;
   Swal: any;
   isData: boolean = false;
+  Search_Data:any = []
+  records: any;
 
   constructor(
     private store: StoreService,
@@ -86,6 +88,8 @@ export class DashboardComponent implements OnInit {
       catagory2: ['', [Validators.required]],
       upload_by:[''],
       search_by:[''],
+      start:['0'],
+      length:['10'],
       selectdate: new FormControl([new Date(), new Date()],[Validators.required]),
       tag:[undefined ]
     });
@@ -136,8 +140,8 @@ export class DashboardComponent implements OnInit {
       to_date: this.datePipe.transform(this.form.get('selectdate').value[1],'dd-MM-yyyy'),
       tags: aar,
       uploaded_by : this.form.get('upload_by')?.value,
-      start : 0,
-      length : 10,
+      start : this.form.get('start')?.value,
+      length : this.form.get('length')?.value,
       filterId:"",
       search: {
         value : this.form.get('search_by')?.value
@@ -146,6 +150,7 @@ export class DashboardComponent implements OnInit {
     this.auth.postData(obj,'/searchDocumentEntry').subscribe((res:any)=>{
       if (res.status === true) {
         this.isData = true
+        this.records = res
         this.toaster.showSuccess("Data Retrive Successfully !!", 'Success')
         if(res.data.length > 0){
           this.Search_Data = res.data
@@ -265,7 +270,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
- Search_Data:any = []
  download(url:any){
   this.http.get(url,{ responseType: 'blob' }).subscribe(
     (d:any)=>{

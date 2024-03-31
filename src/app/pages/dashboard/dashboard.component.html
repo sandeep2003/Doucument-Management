@@ -72,6 +72,18 @@
                   <input type="text" placeholder="search by value" autocomplete="off" id="inpusdsdz1" class="form-control" formControlName="search_by">
                 </div>
               </div>
+              <div class="col-md-3">
+                <div class="form-group input-field">
+                  <label for="upload_doc">Start</label>
+                  <input type="text" placeholder="Start value" autocomplete="off" id="inpusdasddsdz1" class="form-control" formControlName="start">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group input-field">
+                  <label for="upload_doc">Length </label>
+                  <input type="text" placeholder="Number of records to load" autocomplete="off" id="inpusdgdfgsdz1" class="form-control" formControlName="length">
+                </div>
+              </div>
               <div class="col-md-6">
                 <div class="form-group input-field">
                   <label for="upload_doc">Tag</label>
@@ -110,7 +122,19 @@
 <div class="dashboard-design " style="background-color:#fff ;">
   <div class="row mt-3">
     <ng-container *ngIf="isData && Search_Data.length > 0">
+      <div class="col-12">
+
+        <div class="row" style="border-block: 16px;background: #fff;">
+          <div class="col-lg-6">
+            <span>Total Records : {{records?.recordsTotal}}</span>
+          </div>
+          <div class="col-lg-6 text-right">
+            <span>Filtered Records : {{records?.recordsFiltered}}</span>
+          </div>
+        </div>
+      </div>
       <div class="col-lg-12" >
+
         <table class="table table-responsive table-hover">
           <thead class="thead-dark">
             <tr>
