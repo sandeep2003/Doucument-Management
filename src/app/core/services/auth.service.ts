@@ -190,10 +190,9 @@ export class AuthService {
     const data: Blob = new Blob([buffer], { type: EXCEL_TYPE });
     FileSaver.saveAs(
       data,
-      fileName + '_SprintVerify_' + new Date().getTime() + EXCEL_EXTENSION
+      fileName + 'file' + new Date().getTime() + EXCEL_EXTENSION
     );
   }
-
 
   private payloadValidate(obj: any, method: boolean): any {
     // for development mode remove !isDevMode()
