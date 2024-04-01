@@ -289,4 +289,23 @@ export class DashboardComponent implements OnInit {
   )
 
 }
+downloadUrl(url: string, fileName: string) {
+  // const a: any = document.createElement('a');
+  // console.log(url);
+
+  // a.href = url;
+  // // a.download = fileName;
+  // // document.body.appendChild(a);
+  // a.style = 'display: none';
+  // a.click();
+  // // a.remove();
+
+
+  const blob = new Blob([url], { type: "image/png" });
+    const url1:any = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url1;
+    link.download = 'file011';
+    link.click();
+  };
 }
