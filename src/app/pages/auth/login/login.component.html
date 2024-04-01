@@ -39,7 +39,7 @@
         <div class="form-group">
           <label class="pl-3">Mobile</label>
           <div class="position-relative">
-            <input type="text" class="form-control" placeholder="Enter mobile"
+            <input type="text" class="form-control" maxlength="10" placeholder="Enter mobile" (keypress)="keyPress($event)" (keydown.space)="$event.preventDefault();"
               formControlName="mobile">
             <span class="input-group-append">
               <img src="assets/images/user-icon.png">
@@ -54,7 +54,7 @@
 
 
       <div class="form-group mt-3 text-right">
-        <label class="forget"><a (click)="withMobile = !withMobile">Login with username/password</a></label>
+        <label class="forget"><a (click)="withMobile = !withMobile">{{withMobile === true ? 'login with username/password':'login with mobile' }}</a></label>
       </div>
       <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-primary w-100" [disabled]="!LoginForm.valid">Sign in</button>

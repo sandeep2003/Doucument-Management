@@ -52,7 +52,7 @@ export class SidebarComponent implements OnInit {
   childmenu: any;
   subchild: any;
   parentmenu: any;
-  brandLogo = 'assets/images/sprintverify-logo.png';
+  brandLogo = '';
   marginTop: any;
   submarginTop: any;
   conMargin: any = 0;
@@ -91,7 +91,7 @@ export class SidebarComponent implements OnInit {
         if(res.logo != 'undefined' && res.logo != null && res.logo != '') {
           this.brandLogo = res.logo;
         } else {
-          this.brandLogo = 'assets/images/sprintverify-logo.png';
+          this.brandLogo = '';
         }
       }
     });

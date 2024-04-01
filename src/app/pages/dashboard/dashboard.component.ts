@@ -127,6 +127,9 @@ export class DashboardComponent implements OnInit {
     }
   }
   submitForm(){
+    if (!this.form.valid) {
+      return
+    }
     let aar :any= []
     this.tags.forEach((e:any)=>{
       let tagobj = {tag_name:e.label}
@@ -161,6 +164,9 @@ export class DashboardComponent implements OnInit {
     })
   }
   upload(){
+    if (!this.fileulpoadform.valid) {
+      return
+    }
     let aar :any= []
     this.tagsfileupload.forEach((e:any)=>{
       let tagobj = {tag_name:e.label}

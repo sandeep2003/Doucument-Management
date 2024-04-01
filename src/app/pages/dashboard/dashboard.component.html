@@ -162,7 +162,7 @@
               <td>{{item?.upload_time}}</td>
               <td>{{item?.uploaded_by}}</td>
               <td>{{item?.total_count}}</td>
-              <td><a [href]="item?.file_url" class="btn btn-primary">view</a> </td>
+              <td><a [href]="item?.file_url" target="_blank" class="btn btn-primary">view</a> </td>
               <td><button (click)="download(item?.file_url)"  class="btn btn-primary">Download</button></td>
             </tr>
           </tbody>
